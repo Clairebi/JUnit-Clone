@@ -5,24 +5,5 @@ jdk:
   - oraclejdk8
   - openjdk7
   - openjdk6
-  
-before_install:
-- ./tacoco.sh
 
-deploy:
-  provider: releases
-  api_key: 
-    - secure: "Z73+CG9lG/ACP6D8MobceF+GY4DQiEwXGiI8kxi/H12M6KKuIZ/8pFvoUrg6AB5AQ3/p25KmXra+ICEk4pbTKm0JRw56yZmJPBjBQC0As7Tpxbeqatj5xLFbLVb3jNRew2tZL4UTpXSeN6i8SyaaTJlPELZhO61uC4PD6Zvn7i8="
-    file: 
-    - "target/jacoco.exec"
-  skip_cleanup: true
-  on:
-    tags: true
-    all_branches: true
-    repo: junghuk/apache_commons_text
-    
-notifications:
-  email: false
-
-
-
+secure: "Z73+CG9lG/ACP6D8MobceF+GY4DQiEwXGiI8kxi/H12M6KKuIZ/8pFvoUrg6AB5AQ3/p25KmXra+ICEk4pbTKm0JRw56yZmJPBjBQC0As7Tpxbeqatj5xLFbLVb3jNRew2tZL4UTpXSeN6i8SyaaTJlPELZhO61uC4PD6Zvn7i8="
