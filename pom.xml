@@ -113,6 +113,14 @@
             <artifactId>hamcrest-core</artifactId>
             <version>1.3</version>
         </dependency>
+        
+        <dependency>
+      	    <groupId>tacoco</groupId>
+		    <artifactId>tacoco</artifactId>
+		    <version>0.1</version>
+	  	    <scope>test</scope>
+        </dependency>
+        
     </dependencies>
 
     <build>
@@ -145,6 +153,23 @@
                 the JDK is 1.5+, no non-standard repositories are specified in
                 the project, requires only release versions of dependencies of other artifacts.
                 -->
+                
+                
+            +  <plugin>
+            +    <groupId>org.apache.maven.plugins</groupId>
+            +    <artifactId>maven-surefire-plugin</artifactId>
+            +    <version>2.18.1</version>
+            +    <configuration>
+            +      <properties>
+            +        <property>
+            +          <name>listener</name>
+            +          <value>TacocoListener</value>
+            +        </property>
+            +</properties>
+            +      
+            +    </configuration>
+            +  </plugin>
+                
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.3.1</version>
                 <executions>
