@@ -114,6 +114,21 @@
             <version>1.3</version>
         </dependency>
 
+        <!-- new added -->
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm-all</artifactId>
+            <version>5.0.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- jacoco new added -->
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.7.4.201502262128</version>
+        </dependency>
+
         <!-- tacoco new added -->
         <dependency>
             <groupId>tacoco</groupId>
@@ -147,6 +162,34 @@
             The following plugins are ordered according the Maven build lifecycle.
             http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
             -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.4.201502262128</version>
+                <configuration>
+                  <destFile>jacoco.exec</destFile>
+                  <append>true</append>
+                </configuration>
+                <executions>
+                  <execution>
+                    <id>jacoco-initialize</id>
+                    <phase>initialize</phase>
+                    <goals>
+                      <goal>prepare-agent</goal>
+                    </goals>
+                  </execution>
+                  <execution>
+                    <id>jacoco-report</id>
+                    <phase>verify</phase>
+                    <goals>
+                      <goal>report</goal>
+                    </goals>
+                  </execution>
+                </executions>
+            </plugin>        
+
+
+
             <plugin>
                 <!--
                 Checks that the version of user's maven installation is 3.0.4,
@@ -263,6 +306,7 @@
                 A plugin which uses the JUnit framework in order to start
                 our junit suite "AllTests" after the sources are compiled.
                 -->
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.18.1</version>
                 <configuration>
