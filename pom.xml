@@ -136,6 +136,13 @@
             <version>0.1</version>
             <scope>test</scope>
         </dependency>
+        
+        <!-- new added for primitive-hamcrest to Compile ExecAnalyzer-->
+        <dependency>
+            <groupId>org.spideruci.hamcrest</groupId>
+            <artifactId>primitive-hamcrest</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 
@@ -162,6 +169,8 @@
             The following plugins are ordered according the Maven build lifecycle.
             http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html
             -->
+            
+            <!-- new added -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -314,6 +323,7 @@
                     <useSystemClassLoader>true</useSystemClassLoader>
                     <enableAssertions>false</enableAssertions>
 
+                    <!-- new added -->
                     <properties>
                         <property>
                             <name>listener</name>
