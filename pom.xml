@@ -330,6 +330,10 @@
                             <value>TacocoListener</value>
                         </property>
                     </properties>
+                    
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>tacoco/target/tacoco-0.1.jar</additionalClasspathElement>
+                    </additionalClasspathElements>
 
 
 
