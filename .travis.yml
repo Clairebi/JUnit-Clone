@@ -6,4 +6,13 @@ jdk:
   - openjdk7
   - openjdk6
 
-secure: "Z73+CG9lG/ACP6D8MobceF+GY4DQiEwXGiI8kxi/H12M6KKuIZ/8pFvoUrg6AB5AQ3/p25KmXra+ICEk4pbTKm0JRw56yZmJPBjBQC0As7Tpxbeqatj5xLFbLVb3jNRew2tZL4UTpXSeN6i8SyaaTJlPELZhO61uC4PD6Zvn7i8="
+before_install:
+
+  - git clone https://github.com/inf295uci-2015/primitive-hamcrest.git  
+  - cd primitive-hamcrest  
+  - mvn install 
+  - cd ../
+  - git clone https://github.com/inf295uci-2015/tacoco
+  - cd tacoco
+  - mvn package
+  - cd ../
